@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root {
+    --cor-principal: #7D9A29;
+    --cor-secundaria: #6E96C3;
+    --page-secundaria: #9ab8da;
+    --branco: rgba(255, 255, 255, 0.8);
+}
+h1 {
+    font-family: "Nunito", sans-serif;
+}

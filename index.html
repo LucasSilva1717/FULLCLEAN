@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Full Clean home page</title>
+    <link rel="stylesheet" href="./Assets/CSS/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+
+
+
 </head>
+
 <body>
-    
+    <nav
+        class="fixed top-0 left-0 w-full z-999 bg-[var(--branco)] h-24 flex items-center justify-between px-16 shadow-sm">
+        <img src="Assets/IMG/logo.png" class="w-96 h-auto" alt="Logo">
+
+        <ul class="flex items-center gap-12 font-medium text-xl text-gray-700">
+            <li>
+                <a href="#inicio" class="hover:text-[var(--cor-principal)] transition-colors">Início</a>
+            </li>
+            <li>
+                <a href="#servicos" class="hover:text-[var(--cor-principal)] transition-colors">Serviços</a>
+            </li>
+            <li>
+                <a href="#sobre" class="hover:text-[var(--cor-principal)] transition-colors">Sobre</a>
+            </li>
+            <li>
+                <a href="#solicite" class="hover:text-[var(--cor-principal)] transition-colors">Solicite seu
+                    orçamento</a>
+            </li>
+            <li>
+                <a href="#contato" class="hover:text-[var(--cor-principal)] transition-colors">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="inicio" class="pt-24 min-h-screen bg-cover bg-center bg-no-repeat flex items-center px-16 relative"
+        style="background-image: url('./Assets/IMG/estofado.png');">
+
+        <div class="relative z-10 max-w-xl flex flex-col gap-6">
+
+            <h1 class="text-4xl md:text-5xl font-extrabold uppercase tracking-wide leading-tight text-blue-950">
+                Proporcione o ambiente <br>
+                <span class="text-[var(--cor-principal)]">seguro e saudável</span> <br>
+                que sua família merece
+            </h1>
+
+            <p class="text-gray-600 font-medium text-sm md:text-base leading-relaxed uppercase max-w-md">
+                Proteção profunda contra ácaros e bactérias, trazendo a segurança que sua casa precisa.
+            </p>
+
+            <a href="#sobre"
+                class="w-fit bg-[var(--cor-principal)] hover:bg-[var(--cor-secundaria)] text-white font-semibold px-8 py-3.5 rounded-lg shadow-md hover:shadow-lg transition-all text-center text-base">
+                Solicite um Orçamento
+            </a>
+
+        </div>
+        <div class="absolute -bottom-10 right-0 h-[85vh] flex items-end">
+            <img src="Assets/IMG/Banner.png" class="h-full w-auto object-contain object-bottom" alt="banner">
+        </div>
+    </section>
+    <section id="serviços"
+        class="bg-[var(--page-secundaria)] pt-24 min-h-screen bg-cover bg-center bg-no-repeat flex items-center px-16 relative">
+    </section>
 </body>
+
 </html>
