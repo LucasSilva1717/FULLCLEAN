@@ -1,7 +1,7 @@
 # 🚀 FULL CLEAN (Aplicação Web)
 
 ## 📌 Sobre o Projeto
-Este projeto é um site desenvolvido para [inserir o objetivo do site, ex: portfólio, e-commerce, blog]. Atualmente, a estrutura principal foi iniciada com o desenvolvimento da página inicial.
+O projeto Full Clean é focado em proporcionar uma experiência de interface (UI) de alto nível para o setor de higienização de estofados. Desenvolvido com o objetivo de unir performance, autoridade técnica e conversão, o site utiliza uma abordagem de design focada em transmitir confiança e profissionalismo ao usuário final.
 
 ### 🏠 Funcionalidades da Aplicação
 * **Painel de Apresentação**: Banner principal com a proposta de valor da empresa e botão de chamada para ação (CTA).
