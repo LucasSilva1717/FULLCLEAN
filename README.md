@@ -20,12 +20,18 @@ Este projeto é um site desenvolvido para [inserir o objetivo do site, ex: portf
 ---
 
 ## 📸 Demonstração
-Aqui está a aparência atual da página Home:
-
-
+Aqui está a aparência atual da página "Inicio":
+<br>
 <p align="center">
   <img width="1919" height="993" alt="tela 2" src="https://github.com/user-attachments/assets/d9cd3b6d-c992-48cd-99ce-851b5663fa86" />
 </p>
+<br>
+Aqui está a aparência atual da página "Serviços":
+<br>
+<p align="center">
+  <img width="1904" height="993" alt="Tela serviços" src="https://github.com/user-attachments/assets/297129c2-9a5f-4319-98f7-accb27df7c14" />
+</p>
+<br>
 
 ---
 
