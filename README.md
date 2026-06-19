@@ -11,11 +11,44 @@ O projeto Full Clean é focado em proporcionar uma experiência de interface (UI
 ---
 
 ## 🛠️ Tecnologias Utilizadas
-* **HTML5** - Estruturação das páginas.
-* **CSS3** / **TailwindCSS** - Estilização e design responsivo.
-* **JavaScript** - Interatividade.
-* **Node** - Back-end
-* **PostgreSQL** - Banco de dados
+
+### 🌐 Front-end & Interface do Usuário
+* **HTML5** — Utilizado para garantir a semântica correta e a acessibilidade da interface.
+* **CSS3** / **TailwindCSS** — Adotado para criar um design totalmente responsivo com estilização rápida via classes utilitárias, otimizando a performance visual.
+* **JavaScript** — Aplicado no front-end para manipular o DOM e realizar as requisições assíncronas (fetch) para a API do backend.
+
+### ⚙️ Execução & Linguagem do Back-end
+* **Node 20 LTS** — Escolhido como ambiente de execução no ecossistema do backend por sua estabilidade a longo prazo e ótima eficiência no tratamento de requisições E/S.
+* **TypeScript 5.5** — Implementado para trazer tipagem estática ao projeto, mitigando comportamentos inesperados em tempo de execução e acelerando o desenvolvimento com o autocomplete da IDE.
+
+### 🛡️ Roteamento, Integração & Segurança HTTP
+* **Express 4.18** — Utilizado como framework de roteamento minimalista para estruturar os endpoints da API de forma escalável e sem dependências ocultas.
+* **CORS** — Configurado especificamente para permitir que a interface construída em HTML puro se comunique com o servidor de forma segura e controlada.
+* **Helmet** — Integrado como camada de segurança inicial, mitigando vulnerabilidades web comuns através da configuração correta dos cabeçalhos HTTP.
+
+### 🗄️ Persistência de Dados & Modelagem (ORM)
+* **PostgreSQL (via Supabase)** — Banco de dados relacional escolhido pela robustez na consistência de dados, hospedado na nuvem para facilitar a gerência por meio de um painel integrado.
+* **Prisma 5.17 ORM** — Utilizado para abstrair a camada de dados com consultas seguras (*type-safe*). Toda a criação e alteração de tabelas foi automatizada via migrações estruturadas (ex: `prisma.orcamento.create()`).
+
+### 🔍 Validação de Dados & Consistência de Tipos
+* **Zod** — Aplicado para validação rigorosa de payloads nas requisições. Garante a integridade dos dados no *runtime* e barra entradas inválidas (ex: strings onde deveriam ser números) logo na entrada da API, antes mesmo de tocar o banco de dados.
+
+### 📧 Comunicação & Disparos de E-mail Transacional
+* **Resend** — Integrado à aplicação para automatizar o envio de orçamentos diretamente para o e-mail do usuário final, garantindo excelente entregabilidade e uso eficiente de APIs externas.
+
+### 📊 Monitoramento, Rastreabilidade & Logs
+* **Pino** — Centralizador de logs de alta velocidade em formato JSON estruturado, essencial para auditoria em produção e para monitorar a saúde da aplicação.
+* **Pino-Pretty** — Ferramenta auxiliar acionada apenas em modo de desenvolvimento para formatar os logs do Pino, facilitando o rastreamento de erros visualmente.
+
+### 🚀 Produtividade, Automatização & Compilação (Build)
+* **ts-node-dev** — Configurado no ambiente local para habilitar o reinício automático (*hot reload*) do servidor a cada alteração de código, otimizando o fluxo de trabalho.
+* **tsup** — Utilizado para compilar o código TypeScript em JavaScript puro altamente otimizado dentro do diretório `dist/`, preparando a aplicação de forma limpa para produção.
+* **PNPM** — Escolhido como gerenciador de dependências por sua velocidade de instalação superior e armazenamento eficiente de pacotes via links físicos, economizando espaço em disco.
+
+### ☁️ Infraestrutura, Deploy & Configurações Globais
+* **Railway** — Plataforma de nuvem utilizada para o deploy contínuo (CD) do backend, configurada para automatizar novos deploys a cada atualização na branch principal do GitHub.
+* **Variáveis de Ambiente (`.env`)** — Arquivo estratégico utilizado para isolar e proteger credenciais sensíveis de infraestrutura, tais como a `DATABASE_URL` e a `RESEND_API_KEY`.
+
 
 ---
 
@@ -113,10 +146,21 @@ Você vai precisar apenas de um navegador web atualizado ou do [Live Server](htt
 
 ---
 
-## 📅 Próximos Passos
-- [ ] Criação da página de serviços oferecidos
-- [ ] Otimização de SEO
-- [ ] Integração com API / Banco de dados
+## 📅 Próximos Passos & Roadmap de Desenvolvimento
+
+### 🎨 Front-end (Concluído)
+- [x] Criação da página de serviços oferecidos com design responsivo.
+- [x] Otimização inicial de SEO e semântica HTML.
+- [x] Estruturação dos scripts JavaScript para captação de dados da interface.
+
+### ⚙️ Back-end & Infraestrutura (Em Andamento)
+- [ ] Configuração do servidor Express com TypeScript e middlewares de segurança (`Helmet`, `CORS`).
+- [ ] Modelagem do banco de dados PostgreSQL via Prisma ORM e execução das primeiras migrações.
+- [ ] Implementação de esquemas de validação de dados com `Zod` nos endpoints de entrada.
+- [ ] Integração do serviço externo `Resend` para disparo automatizado de e-mails transacionais.
+- [ ] Configuração de proteção contra abusos e ataques de força bruta com `express-rate-limit`.
+- [ ] Acoplamento final: Integração completa da interface Front-end com a API/Banco de dados.
+- [ ] Configuração de variáveis de ambiente seguras e deploy contínuo na plataforma `Railway`.
 
 ---
 Desenvolvido por Lucas Silva ✨
