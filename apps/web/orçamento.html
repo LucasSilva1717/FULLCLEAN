@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar Orçamento - FullClean</title>
+  <link rel="stylesheet" href="./Assets/CSS/output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nunito:wght@1000&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#0F3057] text-gray-100 font-sans min-h-screen flex flex-col justify-between">
+
+  <header class="bg-white shadow-sm py-1 z-50">
+    <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
+      <img src="Assets/IMG/logo.png" class="w-96 h-auto" alt="Logo">
+      <a href="index.html" class="text-sm font-semibold text-gray-600 hover:text-cor-principal transition-colors">
+        Voltar para o inicio
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-4xl w-full mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      
+      <div class="md:col-span-1 flex flex-col justify-center">
+        <div class="span">
+        <span class="text-xs uppercase tracking-widest text-cor-principal font-bold mb-2">Rápido e Prático</span>
+        </div>
+        <h2 class="text-4xl font-black text-white leading-tight">Solicite seu <span class="text-cor-principal">Orçamento</span></h2>
+        <p class="mt-4 text-gray-300 text-sm leading-relaxed">
+          Preencha os dados ao lado. Nossa equipe analisará seu pedido para enviar a melhor proposta em poucos minutos.
+        </p>
+      </div>
+
+      <form id="form-orcamento" class="md:col-span-2 space-y-5 bg-[#143d6d] p-8 rounded-3xl border border-white/5 shadow-2xl">
+        
+        <div>
+          <label for="name" class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Nome Completo *</label>
+          <input type="text" id="name" name="name" required placeholder="Ex: Carlos Silva" 
+                 class="w-full px-4 py-3 bg-[#0F3057]/50 rounded-xl border border-white/10 text-white placeholder-gray-400 focus:border-cor-principal focus:ring-1 focus:ring-cor-principal outline-none transition-all">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Telefone / WhatsApp *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(11) 99999-8888" 
+                   class="w-full px-4 py-3 bg-[#0F3057]/50 rounded-xl border border-white/10 text-white placeholder-gray-400 focus:border-cor-principal focus:ring-1 focus:ring-cor-principal outline-none transition-all">
+          </div>
+          <div>
+            <label for="email" class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">E-mail *</label>
+            <input type="email" id="email" name="email" required placeholder="carlos@email.com" 
+                   class="w-full px-4 py-3 bg-[#0F3057]/50 rounded-xl border border-white/10 text-white placeholder-gray-400 focus:border-cor-principal focus:ring-1 focus:ring-cor-principal outline-none transition-all">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="col-span-2 md:col-span-2">
+            <label for="zipCode" class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">CEP *</label>
+            <input type="text" id="zipCode" name="zipCode" required placeholder="01000-000" 
+                   class="w-full px-4 py-3 bg-[#0F3057]/50 rounded-xl border border-white/10 text-white placeholder-gray-400 focus:border-cor-principal focus:ring-1 focus:ring-cor-principal outline-none transition-all">
+          </div>
+          <div class="col-span-1">
+            <label for="state" class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">UF *</label>
+            <input type="text" id="state" name="state" required placeholder="SP" 
+                   class="w-full px-4 py-3 bg-[#0F3057]/50 rounded-xl border border-white/10 text-white placeholder-gray-400 focus:border-cor-principal focus:ring-1 focus:ring-cor-principal outline-none transition-all">
+          </div>
+          <div class="col-span-1 md:col-span-1">
+            <label for="neighborhood" class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Bairro *</label>
+            <input type="text" id="neighborhood" name="neighborhood" required placeholder="Centro" 
+                   class="w-full px-4 py-3 bg-[#0F3057]/50 rounded-xl border border-white/10 text-white placeholder-gray-400 focus:border-cor-principal focus:ring-1 focus:ring-cor-principal outline-none transition-all">
+          </div>
+        </div>
+
+        <div>
+          <label for="serviceType" class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Tipo de Serviço *</label>
+          <div class="relative">
+            <select id="serviceType" name="serviceType" required 
+                    class="w-full px-4 py-3 bg-[#0F3057]/50 rounded-xl border border-white/10 text-white focus:border-cor-principal focus:ring-1 focus:ring-cor-principal outline-none transition-all appearance-none cursor-pointer">
+              <option value="" class="bg-[#143d6d]">Selecione uma opção...</option>
+              <option value="Limpeza Residencial" class="bg-[#143d6d]">Limpeza Residencial</option>
+              <option value="Limpeza Comercial" class="bg-[#143d6d]">Limpeza Comercial</option>
+              <option value="Limpeza Pós-Obra" class="bg-[#143d6d]">Limpeza Pós-Obra</option>
+              <option value="Limpeza de Estofados" class="bg-[#143d6d]">Limpeza de Estofados</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="message" class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Mensagem ou Observações</label>
+          <textarea id="message" name="message" rows="3" placeholder="Conte-nos mais detalhes..." 
+                    class="w-full px-4 py-3 bg-[#0F3057]/50 rounded-xl border border-white/10 text-white placeholder-gray-400 focus:border-cor-principal focus:ring-1 focus:ring-cor-principal outline-none transition-all resize-none"></textarea>
+        </div>
+
+        <button type="submit" 
+                class="w-full bg-cor-principal hover:bg-sub text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all cursor-pointer text-center uppercase tracking-wider text-xs">
+          Enviar Pedido de Orçamento
+        </button>
+      </form>
+      
+    </div>
+  </main>
+
+  <footer class="bg-[#0b2442] py-4 text-center text-xs text-gray-400 border-t border-white/5">
+    &copy; 2026 FullClean. Todos os direitos reservados.
+  </footer>
+
+  <script src="./Assets/JS/main.js" defer></script>
+</body>
+</html>

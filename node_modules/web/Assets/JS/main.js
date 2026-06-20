@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // ==========================================
+    // 1. MENU DROPDOWN
+    // ==========================================
     const dropdownMenu = document.getElementById('dropdown-menu');
 
     if (dropdownMenu) {
@@ -13,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // ==========================================
+    // 2. SLIDERS (ANTES E DEPOIS)
+    // ==========================================
     const sliderInput = document.getElementById('slider-input');
     const beforeImage = document.getElementById('before-image');
     const sliderLine = document.getElementById('slider-line');
@@ -37,6 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // ==========================================
+    // 3. CARROSSEIS (ESTOFADOS, IMPER, COLCHÃO)
+    // ==========================================
     const trackEstofados = document.getElementById('carousel-track');
     const prevEstofados = document.getElementById('carousel-prev');
     const nextEstofados = document.getElementById('carousel-next');
@@ -65,6 +74,63 @@ document.addEventListener("DOMContentLoaded", () => {
         const getScrollAmount = () => trackColchao.clientWidth;
         nextColchao.addEventListener('click', () => { trackColchao.scrollLeft += getScrollAmount(); });
         prevColchao.addEventListener('click', () => { trackColchao.scrollLeft -= getScrollAmount(); });
+    }
+
+    // ==========================================
+    // 4. ENVIO DO FORMULÁRIO DE ORÇAMENTO (API)
+    // ==========================================
+    const budgetForm = document.getElementById('form-orcamento');
+
+    if (budgetForm) {
+        budgetForm.addEventListener('submit', async (event) => {
+            // Impeça a página de recarregar
+            event.preventDefault();
+
+            // Mapeia os campos do formulário através do atributo 'name' das tags HTML
+            const formData = new FormData(budgetForm);
+            
+            const budgetData = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email'),
+                state: formData.get('state'),
+                neighborhood: formData.get('neighborhood'),
+                zipCode: formData.get('zipCode'),
+                serviceType: formData.get('serviceType'),
+                message: formData.get('message') || ''
+            };
+
+            try {
+                // Envia os dados estruturados em JSON para o seu Back-End Node.js
+                const response = await fetch('http://localhost:3333/budgets', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(budgetData)
+                });
+
+                // Caso caia em alguma regra de validação do banco ou do Zod
+                if (!response.ok) {
+                    const errorResponse = await response.json();
+                    console.error('Erro retornado pela API:', errorResponse);
+                    alert('Ops! Verifique se os dados inseridos estão corretos.');
+                    return;
+                }
+
+                // Fluxo de Sucesso!
+                const result = await response.json();
+                console.log('Orçamento salvo com sucesso!', result);
+                alert('Orçamento enviado com sucesso! Aguarde o nosso contato.');
+                
+                // Limpa o formulário após salvar no banco
+                budgetForm.reset();
+
+            } catch (error) {
+                console.error('Erro de conexão:', error);
+                alert('Não foi possível conectar ao servidor. O seu Back-End está ligado?');
+            }
+        });
     }
 
 });
