@@ -125,6 +125,18 @@ Aqui está a aparência atual da página "Serviços":
 
 </p>
 <br>
+<br>
+<p align="center">
+<img width="1919" height="989" alt="17" src="https://github.com/user-attachments/assets/7a399201-469d-406b-8cde-02c6cd27069d" />
+
+</p>
+<br>
+<br>
+<p align="center">
+<img width="1919" height="990" alt="18" src="https://github.com/user-attachments/assets/b773ab08-d5d7-465f-9e7e-ac15e1c96607" />
+
+</p>
+<br>
 
 ---
 
