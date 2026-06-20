@@ -154,12 +154,12 @@ Você vai precisar apenas de um navegador web atualizado ou do [Live Server](htt
 - [x] Estruturação dos scripts JavaScript para captação de dados da interface.
 
 ### ⚙️ Back-end & Infraestrutura (Em Andamento)
-- [ ] Configuração do servidor Express com TypeScript e middlewares de segurança (`Helmet`, `CORS`).
-- [ ] Modelagem do banco de dados PostgreSQL via Prisma ORM e execução das primeiras migrações.
-- [ ] Implementação de esquemas de validação de dados com `Zod` nos endpoints de entrada.
+- [x] Configuração do servidor Express com TypeScript e middlewares de segurança (`Helmet`, `CORS`).
+- [x] Modelagem do banco de dados PostgreSQL via Prisma ORM e execução das primeiras migrações.
+- [x] Implementação de esquemas de validação de dados com `Zod` nos endpoints de entrada.
 - [ ] Integração do serviço externo `Resend` para disparo automatizado de e-mails transacionais.
-- [ ] Configuração de proteção contra abusos e ataques de força bruta com `express-rate-limit`.
-- [ ] Acoplamento final: Integração completa da interface Front-end com a API/Banco de dados.
+- [x] Configuração de proteção contra abusos e ataques de força bruta com `express-rate-limit`.
+- [x] Acoplamento final: Integração completa da interface Front-end com a API/Banco de dados.
 - [ ] Configuração de variáveis de ambiente seguras e deploy contínuo na plataforma `Railway`.
 
 ---
