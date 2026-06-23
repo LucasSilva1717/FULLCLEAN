@@ -23,9 +23,9 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
         working-directory: ./apps/api
 
       - name: Run tests
-        run: npx vitest run
+        run: npm run test
         working-directory: ./apps/api
