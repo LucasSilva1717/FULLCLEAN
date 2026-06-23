@@ -26,10 +26,6 @@ jobs:
         run: npm install
         working-directory: ./apps/api
 
-      - name: Grant execute permission for vitest
-        run: chmod +x node_modules/.bin/vitest
-        working-directory: ./apps/api
-
       - name: Run tests
         run: npx vitest run
         working-directory: ./apps/api
