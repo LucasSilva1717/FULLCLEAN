@@ -83,10 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (budgetForm) {
         budgetForm.addEventListener('submit', async (event) => {
-            // Impeça a página de recarregar
             event.preventDefault();
 
-            // Mapeia os campos do formulário através do atributo 'name' das tags HTML
             const formData = new FormData(budgetForm);
             
             const budgetData = {
@@ -101,8 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             try {
-                // Envia os dados estruturados em JSON para o seu Back-End Node.js
-                const response = await fetch('http://localhost:3333/budgets', {
+                const response = await fetch('https://api-production-d6e9.up.railway.app/budgets', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -110,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     body: JSON.stringify(budgetData)
                 });
 
-                // Caso caia em alguma regra de validação do banco ou do Zod
                 if (!response.ok) {
                     const errorResponse = await response.json();
                     console.error('Erro retornado pela API:', errorResponse);
@@ -118,13 +114,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     return;
                 }
 
-                // Fluxo de Sucesso!
                 const result = await response.json();
                 console.log('Orçamento salvo com sucesso!', result);
                 alert('Orçamento enviado com sucesso! Aguarde o nosso contato.');
                 
-                // Limpa o formulário após salvar no banco
                 budgetForm.reset();
+                
+                const submitButton = document.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.innerText = 'Enviando...';
 
             } catch (error) {
                 console.error('Erro de conexão:', error);
