@@ -27,7 +27,7 @@ export class CreateBudgetRequestController {
 
       return response.status(201).json(budgetRequest);
     } catch (error) {
-      console.error("ERRO DETALHADO:", error);
+      console.error("ERRO NO BANCO DE DADOS:", error);
       if (error instanceof z.ZodError) {
         return response.status(400).json({ 
           message: 'Erro de validação nos dados enviados.', 
