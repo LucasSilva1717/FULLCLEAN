@@ -3,60 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Administrativo | FULL CLEAN</title>
-    <link href="./Assets/CSS/output.css" rel="stylesheet">
+    <title>Acesso Admin | FullClean</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<body class="bg-slate-950 flex items-center justify-center min-h-screen p-4">
 
-    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-emerald-500/20 blur-[120px]"></div>
+    </div>
+
+    <div class="relative bg-slate-900/50 backdrop-blur-xl border border-slate-800 p-8 rounded-2xl shadow-2xl w-full max-w-sm">
         <div class="text-center mb-8">
-            <h1 class="text-2xl font-bold text-gray-800">Área Restrita</h1>
-            <p class="text-gray-600 text-sm mt-2">Insira suas credenciais para gerenciar os orçamentos.</p>
+            <h1 class="text-2xl font-bold text-white tracking-tight">FullClean Admin</h1>
+            <p class="text-slate-400 text-sm mt-2">Bem-vindo de volta, acesse o painel.</p>
         </div>
 
-        <div id="error-alert" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
-            <span class="block sm:inline">Usuário ou senha incorretos.</span>
+        <div id="error-alert" class="hidden mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-xs text-center">
+            Credenciais inválidas.
         </div>
 
-        <form id="login-form">
-            <div class="mb-4">
-                <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Usuário</label>
-                <input type="text" id="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ex: recrutador" required>
+        <form id="login-form" class="space-y-4">
+            <div>
+                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1 ml-1">Usuário</label>
+                <input type="text" id="username" class="w-full bg-slate-950 border border-slate-700 rounded-lg py-2.5 px-4 text-white focus:ring-2 focus:ring-emerald-500 outline-none transition-all" placeholder="admin" required>
             </div>
 
-            <div class="mb-6">
-                <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Senha</label>
-                <input type="password" id="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="••••••••" required>
+            <div>
+                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1 ml-1">Senha</label>
+                <input type="password" id="password" class="w-full bg-slate-950 border border-slate-700 rounded-lg py-2.5 px-4 text-white focus:ring-2 focus:ring-emerald-500 outline-none transition-all" placeholder="••••••••" required>
             </div>
 
-            <div class="flex items-center justify-between">
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-200">
-                    Entrar no Painel
-                </button>
-            </div>
+            <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3 rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98]">
+                Acessar Painel
+            </button>
         </form>
         
         <div class="text-center mt-6">
-            <a href="index.html" class="text-sm text-blue-500 hover:text-blue-800 transition duration-200">&larr; Voltar ao site principal</a>
+            <a href="index.html" class="text-xs text-slate-500 hover:text-emerald-500 transition-colors uppercase tracking-wider font-medium">&larr; Voltar ao site</a>
         </div>
     </div>
 
     <script>
         document.getElementById('login-form').addEventListener('submit', function(e) {
             e.preventDefault();
-
             const user = document.getElementById('username').value;
             const pass = document.getElementById('password').value;
-            const errorAlert = document.getElementById('error-alert');
-
-            if (user === 'recrutador' && pass === 'admin123') {
-                errorAlert.classList.add('hidden');
-                
+            
+            if (user === 'admin' && pass === 'admin') {
                 sessionStorage.setItem('isAdminLoggedIn', 'true');
-                
                 window.location.href = 'admin.html';
             } else {
-                errorAlert.classList.remove('hidden');
+                const error = document.getElementById('error-alert');
+                error.classList.remove('hidden');
                 document.getElementById('password').value = '';
             }
         });
