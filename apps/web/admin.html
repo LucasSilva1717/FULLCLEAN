@@ -30,7 +30,7 @@
         <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center font-bold text-slate-900">A</div>
         <div>
           <p class="text-sm font-medium text-slate-200">Admin</p>
-          <p class="text-xs text-slate-400">Painel de Controlo</p>
+          <p class="text-xs text-slate-400">Painel de Controle</p>
         </div>
       </div>
     </div>
@@ -102,7 +102,7 @@
     const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     const API_URL = isLocalhost 
     ? 'http://localhost:3333/budget-requests' 
-    : 'https://api-fullclean-xyz.up.railway.app/budget-requests';
+    : 'https://api-production-d6e9.up.railway.app/budget-requests';
 
     async function fetchBudgets() {
       const tableBody = document.getElementById('budget-table-body');
@@ -178,7 +178,7 @@
             <td colspan="6" class="p-8 text-center text-red-500 font-medium bg-red-50/40">
               <p>Não foi possível conectar ao servidor backend.</p>
               <p class="text-xs text-slate-500 font-normal mt-1">
-                Certifique-se de que a API está ativa no terminal rodando na porta 3333.
+                Certifique-se de que a API está conectada com o banco de dados.
               </p>
             </td>
           </tr>`;
